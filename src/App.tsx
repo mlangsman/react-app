@@ -1,6 +1,7 @@
 //import ListGroup from "./components/ListGroup";
 
 import Alert from "./components/Alert";
+import Button, { ButtonType } from "./components/Button";
 
 /*
 function App() {
@@ -22,11 +23,24 @@ function App() {
 }*/
 
 function App() {
+  const handleClick = (buttonType: ButtonType) => {
+    console.log(buttonType);
+  };
+
   return (
     <div>
       <Alert>
         Hello <b>Biggedy boom!</b>
       </Alert>
+      <Alert>
+        Hello <b>bauf!</b>
+      </Alert>
+      <Button buttonType={ButtonType.Primary} onButtonClick={handleClick}>
+        Primary
+      </Button>
+      <Button buttonType={ButtonType.Secondary} onButtonClick={handleClick}>
+        Secondary
+      </Button>
     </div>
   );
 }
