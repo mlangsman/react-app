@@ -1,5 +1,5 @@
 //import ListGroup from "./components/ListGroup";
-
+import { useState } from "react";
 import Alert from "./components/Alert";
 import Button, { ButtonType } from "./components/Button";
 
@@ -23,23 +23,17 @@ function App() {
 }*/
 
 function App() {
+  const [showAlert, setShowAlert] = useState(false);
   const handleClick = (buttonType: ButtonType) => {
+    setShowAlert(true);
     console.log(buttonType);
   };
 
   return (
     <div>
-      <Alert>
-        Hello <b>Biggedy boom!</b>
-      </Alert>
-      <Alert>
-        Hello <b>bauf!</b>
-      </Alert>
+      {showAlert && <Alert onClose={() => setShowAlert(false)}>Hello</Alert>}
       <Button buttonType={ButtonType.Primary} onButtonClick={handleClick}>
         Primary
-      </Button>
-      <Button buttonType={ButtonType.Secondary} onButtonClick={handleClick}>
-        Secondary
       </Button>
     </div>
   );
