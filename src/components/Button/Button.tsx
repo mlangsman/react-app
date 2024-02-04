@@ -17,7 +17,7 @@ const Button = ({ children, buttonType, onButtonClick }: Props) => {
   return (
     <button
       type="button"
-      className={"btn" + " " + buttonType}
+      className={"btn" + " " + buttonType + " " + styles.button}
       onClick={() => onButtonClick(buttonType)}
     >
       <PiArchiveBold className={styles.buttonIcon} />
