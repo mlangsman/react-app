@@ -1,4 +1,6 @@
 //import React from "react";
+import styles from "./Button.module.css";
+import { PiArchiveBold } from "react-icons/pi";
 
 export enum ButtonType {
   Primary = "btn-primary",
@@ -18,6 +20,7 @@ const Button = ({ children, buttonType, onButtonClick }: Props) => {
       className={"btn" + " " + buttonType}
       onClick={() => onButtonClick(buttonType)}
     >
+      <PiArchiveBold className={styles.buttonIcon} />
       {children}
     </button>
   );
