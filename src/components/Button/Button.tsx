@@ -2,25 +2,20 @@
 import styles from "./Button.module.css";
 import { PiArchiveBold } from "react-icons/pi";
 
-export enum ButtonType {
-  Primary = "btn-primary",
-  Secondary = "btn-secondary",
-}
-
 interface Props {
   children: string;
-  buttonType: ButtonType;
-  onButtonClick: (buttonType: ButtonType) => void;
+  buttonType?: "primary" | "secondary" | "danger";
+  onClick: () => void;
 }
 
-const Button = ({ children, buttonType, onButtonClick }: Props) => {
+const Button = ({ children, buttonType = "primary", onClick }: Props) => {
   return (
     <button
       type="button"
-      className={"btn" + " " + buttonType + " " + styles.button}
-      onClick={() => onButtonClick(buttonType)}
+      className={"btn " + styles["btn-" + buttonType] + " " + styles.button}
+      onClick={onClick}
     >
-      <PiArchiveBold className={styles.buttonIcon} />
+      <PiArchiveBold />
       {children}
     </button>
   );
