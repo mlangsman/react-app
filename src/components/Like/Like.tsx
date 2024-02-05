@@ -8,14 +8,14 @@ interface Props {
 }
 
 const Like = ({ onClick }: Props) => {
-  const clickHandler = () => {
+  const toggle = () => {
     onClick();
     setIsSelected(!isSelected);
   };
 
   const [isSelected, setIsSelected] = useState(false);
   return (
-    <div onClick={clickHandler}>
+    <div onClick={toggle}>
       {isSelected ? (
         <GoHeartFill className={styles.heartSelected} />
       ) : (
