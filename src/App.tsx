@@ -2,6 +2,7 @@ import { useState } from "react";
 import Alert from "./components/Alert";
 import Button from "./components/Button/Button";
 import ListGroup from "./components/ListGroup";
+import Like from "./components/Like";
 
 import "./App.css";
 
@@ -27,6 +28,11 @@ function App() {
         items={items}
         heading="Cities"
         onSelectedItem={handleSelectItem}
+      />
+      <Like
+        onClick={() => {
+          console.log("Like");
+        }}
       />
     </div>
   );
